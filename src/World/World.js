@@ -18,10 +18,10 @@ export default class World {
         const controls = createControls(camera, renderer.domElement)
 
         const cube = createCube()
-        const lights = createLights()
+        const {mainLight, ambientLight} = createLights()
         // loop.updatables.push(cube)
         loop.updatables.push(controls)
-        scene.add(cube, lights)
+        scene.add(ambientLight, mainLight, cube)
 
         const resizer = new Resizer(container, camera, renderer)
     }
